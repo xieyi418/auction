@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" class="fixed">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>清江拍卖管理系统</title>
+    <link rel="stylesheet" href="stylesheets/css/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/css/animate.css">
+    <link rel="stylesheet" href="stylesheets/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/css/style.css">
+    <link rel="stylesheet" href="stylesheets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="stylesheets/css/jquery-ui-timepicker-addon.min.css">
+    <link rel="stylesheet" href="stylesheets/css/select2.min.css">
+    <link rel="stylesheet" href="stylesheets/css/select2-bootstrap.min.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="page-header">
+        <div class="leftside-header">
+            <div class="logo">
+                <a href="index.html" class="on-click">
+                    <img alt="logo" src="images/logo.png" />
+                </a>
+            </div>
+            <div id="menu-toggle" class="visible-xs toggle-left-sidebar" data-toggle-class="left-sidebar-open" data-target="html">
+                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+        <div class="rightside-header">
+            <div class="header-middle"></div>
+            <div class="header-section" id="user-headerbox">
+                <div class="user-header-wrap">
+                    <div class="user-photo">
+                        <img src="images/avatar_1.jpg" alt="刘岸东" />
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">刘岸东</span>
+                    </div>
+                    <i class="fa fa-plus icon-open" aria-hidden="true"></i>
+                    <i class="fa fa-minus icon-close" aria-hidden="true"></i>
+                </div>
+                <div class="user-options dropdown-box">
+                    <div class="drop-content basic">
+                        <ul class="nav">
+                            <li> <a href="lock-screen.html"><i class="fa fa-lock" aria-hidden="true"></i>锁屏</a></li>
+                            <li><a href="#changePWD" id="changePWD"><i class="fa fa-cog" aria-hidden="true"></i><span>密码修改</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header-separator"></div>
+            <div class="header-section">
+                <a href="login.html"><i class="fa fa-sign-out log-out" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="left-sidebar">
+            <div class="left-sidebar-header">
+                <div class="left-sidebar-title">导航栏</div>
+                <div class="left-sidebar-toggle c-hamburger c-hamburger--htla hidden-xs" data-toggle-class="left-sidebar-collapsed" data-target="html">
+                    <span></span>
+                </div>
+            </div>
+            <div id="left-nav" class="nano">
+                <div class="nano-content">
+                    <nav>
+                        <ul class="nav" id="main-nav">
+                            <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i><span>功能列表</span></a></li>
+                            <li class="close-item">
+                                <a href="#sellerInfo" id="sellerInfo"><i class="fa fa-user-secret" aria-hidden="true"></i><span>卖家管理</span></a>
+                            </li>
+                            <li class="close-item">
+                                <a href="#buyerInfo" id="buyerInfo"><i class="fa fa-user" aria-hidden="true"></i><span>买家管理</span></a>
+                            </li>
+                            <li class="close-item">
+                                <a href="#houseInfo" id="houseInfo"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>库房管理</span></a>
+                            </li>
+                            <li class="close-item">
+                                <a href="#auctionInfo" id="auctionInfo"><i class="fa fa-legal" aria-hidden="true"></i><span>拍卖管理</span></a>
+                            </li>
+                            <li class="close-item">
+                                <a href="#ontoScreen" id="ontoScreen"><i class="fa fa-laptop" aria-hidden="true"></i><span>拍品投影</span></a>
+                            </li>
+                            <li class="close-item">
+                                <a href="#dealInfo" id="dealInfo"><i class="fa fa-cube" aria-hidden="true"></i><span>成交管理</span></a>
+                            </li>
+                            <li class="close-item">
+                                <a href="#buyerAccount" id="buyerAccount"><i class="fa fa-credit-card" aria-hidden="true"></i><span>买家结算</span></a>
+                            </li>
+                            <li class="close-item">
+                                <a href="#outStorage" id="outStorage"><i class="fa fa-upload" aria-hidden="true"></i><span>拍品出库</span></a>
+                            </li>
+                            <li class="close-item">
+                                <a href="#sellerAccount" id="sellerAccount"><i class="fa fa-money" aria-hidden="true"></i><span>卖家结算</span></a>
+                            </li>
+                            <li class="close-item">
+                                <a href="#itemClear" id="itemClear"><i class="fa fa-money" aria-hidden="true"></i><span>拍品清算</span></a>
+                            </li>
+                            <li class="close-item">
+                                <a href="#tablesInfo" id="tablesInfo"><i class="fa fa-table" aria-hidden="false"></i><span>报表管理</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-header">
+                <div class="leftside-content-header">
+                    <ul class="breadcrumbs">
+                        <li><i class="fa fa-home" aria-hidden="true"></i><a>功能列表</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row animated slideInRight">
+                <div class="col-sm-12">
+                    <div class="panel">
+                        <div class="panel-content" id="where">
+                            <div class="row">
+                                <label class="col-sm-12 control-label text-center">欢迎进入拍卖管理系统！</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="scroll-to-top"><i class="fa fa-angle-double-up"></i></a>
+    </div>
+</div>
+<script src="javascripts/jquery.min.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script src="javascripts/jquery-ui.min.js"></script>
+<script src="javascripts/nano-scroller.js"></script>
+<script src="javascripts/template-script.min.js"></script>
+<script src="javascripts/jquery.validate.min.js"></script>
+<script src="javascripts/jquery.dataTables.min.js"></script>
+<script src="javascripts/dataTables.bootstrap.min.js"></script>
+<script src="javascripts/jquery-ui-timepicker-addon.min.js"></script>
+<script src="javascripts/select2.min.js"></script>
+<script src="javascripts/zh-CN.js"></script>
+<script src="javascripts/public.js"></script>
+<script src="javascripts/router.js"></script>
+</body>
+
+</html>
